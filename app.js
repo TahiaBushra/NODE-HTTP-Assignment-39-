@@ -31,31 +31,43 @@
 
 //
 
-const http = require("http");
+// const http = require("http");
 
-const server = http.createServer((req, res) => {
-  const url = req.url;
+// const server = http.createServer((req, res) => {
+//   const url = req.url;
 
-  switch (url) {
-    case "/":
-      res.writeHead(200, { "Content-Type": "text/plain" });
-      res.end("Welcome to home");
-      break;
-    case "/about":
-      res.writeHead(200, { "Content-Type": "text/plain" });
-      res.end("Welcome to about");
-      break;
-    case "/contact":
-      res.writeHead(200, { "Content-Type": "text/plain" });
-      res.end("Welcome to contact");
-      break;
-    default:
-      res.writeHead(404, { "Content-Type": "text/plain" });
-      res.end("Page not found");
-  }
+//   switch (url) {
+//     case "/":
+//       res.writeHead(200, { "Content-Type": "text/plain" });
+//       res.end("Welcome to home");
+//       break;
+//     case "/about":
+//       res.writeHead(200, { "Content-Type": "text/plain" });
+//       res.end("Welcome to about");
+//       break;
+//     case "/contact":
+//       res.writeHead(200, { "Content-Type": "text/plain" });
+//       res.end("Welcome to contact");
+//       break;
+//     default:
+//       res.writeHead(404, { "Content-Type": "text/plain" });
+//       res.end("Page not found");
+//   }
+// });
+
+// const PORT = 8080;
+// server.listen(PORT, () => {
+//   console.log(`Server is running on port: ${PORT}`);
+// });
+
+console.log("Start");
+
+process.nextTick(() => {
+  console.log("Task 1");
 });
 
-const PORT = 8080;
-server.listen(PORT, () => {
-  console.log(`Server is running on port: ${PORT}`);
+console.log("End");
+
+process.nextTick(() => {
+  console.log("Task 2");
 });
